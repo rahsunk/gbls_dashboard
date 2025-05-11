@@ -1,0 +1,17 @@
+body {
+  text-align: center;
+  margin: 20px;
+}
+
+#fname,
+#lname {
+  margin: 10px;
+}
+
+#matchedPeople {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}

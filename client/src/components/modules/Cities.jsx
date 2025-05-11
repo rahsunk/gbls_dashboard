@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 // import { UserContext } from "../context/UserContext";
 import { get, post } from "../../utilities";
-import "./Cities.css";
+import "./section2.css";
 
 const Cities = (props) => {
   const [cities, setCities] = useState(props.topCities);
@@ -23,17 +23,19 @@ const Cities = (props) => {
 
   return (
     <>
-      <h2>Top 8 Cities by Number of Clients</h2>
-      {/* <div>{citiesList}</div> */}
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">City</th>
-            <th scope="col">Clients</th>
-          </tr>
-        </thead>
-        <tbody>{citiesList}</tbody>
-      </table>
+      <div>
+        <h2>Top 8 Cities by Number of Clients</h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">City</th>
+              <th scope="col">Clients</th>
+            </tr>
+          </thead>
+          {/* Just getting the top 8 cities below */}
+          <tbody>{citiesList.slice(0, 8)}</tbody>
+        </table>
+      </div>
     </>
   );
 };

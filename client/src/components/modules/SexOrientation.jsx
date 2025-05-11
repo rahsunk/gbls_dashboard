@@ -7,32 +7,32 @@ import { PieChart, Pie, Cell } from "recharts";
 import "./section3.css";
 
 const colorConfig = {
-  Yes: "#008000",
-  No: "#4B0082",
+  Heterosexual: "#008000",
+  Homosexual: "#4B0082",
   Unspecified: "#808080",
 };
 
-const Disabled = (props) => {
-  const [disabled, setDisabled] = useState(props.disabled);
+const SexOrientation = (props) => {
+  const [sexOrientation, setSexOrientation] = useState(props.sexOrientation);
 
   useEffect(() => {
-    setDisabled(props.disabled);
-  }, [props.disabled]);
+    setSexOrientation(props.sexOrientation);
+  }, [props.sexOrientation]);
 
   return (
     <>
       <div>
-        <h2>Disabled</h2>
+        <h2>Sexual Orientation</h2>
         <PieChart width={730} height={250}>
           <Pie
             label={({ name, value }) => `${name}: ${value}`}
-            data={disabled}
+            data={sexOrientation}
             dataKey="count"
             nameKey="value"
             innerRadius="25%"
             outerRadius="50%"
           >
-            {disabled.map((entry, index) => (
+            {sexOrientation.map((entry, index) => (
               <Cell fill={colorConfig[entry["value"]]} />
             ))}
           </Pie>
@@ -42,4 +42,4 @@ const Disabled = (props) => {
   );
 };
 
-export default Disabled;
+export default SexOrientation;

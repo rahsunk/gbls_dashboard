@@ -1,572 +1,53 @@
-const people = [
-  {
-    City: "Los Angeles",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Long Beach",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: true,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Compton",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Pasadena",
-    Ethnicity: "Asian",
-    Gender: "Male",
-    DV: null,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Los Angeles",
-    Ethnicity: "White",
-    Gender: "Other",
-    DV: null,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Long Beach",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: true,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Glendale",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: false,
-    Disabled: true,
-    Veteran: false,
-  },
-  {
-    City: "Burbank",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Los Angeles",
-    Ethnicity: "White",
-    Gender: "Male",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: true,
-    Disabled: false,
-    Veteran: true,
-  },
-  {
-    City: "Pasadena",
-    Ethnicity: "Asian",
-    Gender: "Female",
-    DV: null,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Long Beach",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: false,
-    Disabled: true,
-    Veteran: false,
-  },
-  {
-    City: "Inglewood",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Compton",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Glendale",
-    Ethnicity: "Black",
-    Gender: "Other",
-    DV: false,
-    Disabled: true,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Long Beach",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: null,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Los Angeles",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Burbank",
-    Ethnicity: "Other",
-    Gender: "Female",
-    DV: true,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Pasadena",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Long Beach",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Compton",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Inglewood",
-    Ethnicity: "White",
-    Gender: "Male",
-    DV: null,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Glendale",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Los Angeles",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: true,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Long Beach",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: true,
-    Veteran: false,
-  },
-  {
-    City: "Pasadena",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: null,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Burbank",
-    Ethnicity: "Asian",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Los Angeles",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Compton",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: true,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "White",
-    Gender: "Male",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Long Beach",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Inglewood",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Pasadena",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: true,
-    Veteran: false,
-  },
-  {
-    City: "Glendale",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: null,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Long Beach",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Los Angeles",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: true,
-  },
-  {
-    City: "Burbank",
-    Ethnicity: "Other",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Pasadena",
-    Ethnicity: "White",
-    Gender: "Male",
-    DV: null,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Compton",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Glendale",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: true,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: null,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Long Beach",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Los Angeles",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: true,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Compton",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Inglewood",
-    Ethnicity: "White",
-    Gender: "Male",
-    DV: false,
-    Disabled: true,
-    Veteran: false,
-  },
-  {
-    City: "Long Beach",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: undefined,
-  },
-  {
-    City: "Pasadena",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Los Angeles",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: null,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Burbank",
-    Ethnicity: "Other",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Glendale",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: true,
-    Veteran: true,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Long Beach",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Compton",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: true,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Los Angeles",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: true,
-    Veteran: false,
-  },
-  {
-    City: "Pasadena",
-    Ethnicity: "Asian",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Long Beach",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-  {
-    City: "Glendale",
-    Ethnicity: "White",
-    Gender: "Female",
-    DV: false,
-    Disabled: null,
-    Veteran: false,
-  },
-  {
-    City: "Burbank",
-    Ethnicity: "Hispanic/Latino",
-    Gender: "Female",
-    DV: false,
-    Disabled: true,
-    Veteran: false,
-  },
-  {
-    City: "Santa Monica",
-    Ethnicity: "Black",
-    Gender: "Female",
-    DV: false,
-    Disabled: false,
-    Veteran: false,
-  },
-];
+// Taken from Sheets API tutorial: https://www.youtube.com/watch?v=cRwpTv33Z_g
+// and repository: https://github.com/theotrain/load-google-sheet-as-csv-with-js
 
-for (const person of people) {
-  const randNum = Math.random();
-  if (randNum > 0.5) person["Language"] = "English";
-  else if (randNum > 0.25) person["Language"] = "Spanish";
-  else if (randNum > 0.2) person["Language"] = "Korean";
-  else if (randNum > 0.15) person["Language"] = "Mandarin";
-  else if (randNum > 0.1) person["Language"] = "Japanese";
-  else if (randNum > 0.05) person["Language"] = "Russian";
-  else person["Language"] = "Other";
+const sheetID = "1mG9ChXcHKXjQCDXWVJccEG130tbclYFHBptU7ewrdFk";
+const sheetName = encodeURIComponent("Sheet1");
+const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
+
+let newPeople;
+
+export async function getData(sheetURL) {
+  const response = await fetch(sheetURL);
+  const responseText = await response.text();
+  return handleResponse(responseText);
 }
 
-export { people };
+function handleResponse(csvText) {
+  // console.log(csvText);
+  let sheetObjects = csvToObjects(csvText);
+  // sheetObjects is now an Array of Objects
+  // console.log(sheetObjects);
+  return sheetObjects;
+}
+
+function csvToObjects(csv) {
+  const csvRows = csv.split("\n");
+  const propertyNames = csvSplit(csvRows[0]);
+  let objects = [];
+  for (let i = 1, max = csvRows.length; i < max; i++) {
+    let thisObject = {};
+    let row = csvSplit(csvRows[i]);
+    for (let j = 0, max = row.length; j < max; j++) {
+      thisObject[propertyNames[j]] = row[j];
+      // BELOW 4 LINES WILL CONVERT DATES IN THE "ENROLLED" COLUMN TO JS DATE OBJECTS
+      if (propertyNames[j] === "Enrolled") {
+        thisObject[propertyNames[j]] = new Date(row[j]);
+      } else {
+        thisObject[propertyNames[j]] = row[j];
+      }
+    }
+    objects.push(thisObject);
+  }
+  return objects;
+}
+
+function csvSplit(row) {
+  return row.split(",").map((val) => val.substring(1, val.length - 1));
+}
 
 export function getTopFieldValues(data, field) {
+  // console.log(field, data);
   const frequencyMap = {};
 
   for (const item of data) {
@@ -578,6 +59,7 @@ export function getTopFieldValues(data, field) {
     .sort((a, b) => b[1] - a[1]) // Sort by count descending
     .map(([value, count]) => ({ value, count }));
 
+  // console.log(field, sorted);
   return sorted;
 }
 
@@ -585,19 +67,19 @@ export function getGenderCountByEthnicity(data) {
   const result = {};
 
   for (const person of data) {
-    const { Ethnicity, Gender } = person;
-    if (!Ethnicity || !Gender) continue;
+    const { ethnicity, gender } = person;
+    if (!ethnicity || !gender) continue;
 
-    if (!result[Ethnicity]) {
-      result[Ethnicity] = { Ethnicity, Female: 0, Male: 0, Other: 0 };
+    if (!result[ethnicity]) {
+      result[ethnicity] = { ethnicity, Female: 0, Male: 0, Other: 0 };
     }
 
-    if (Gender === "Female") {
-      result[Ethnicity].Female += 1;
-    } else if (Gender === "Male") {
-      result[Ethnicity].Male += 1;
-    } else if (Gender === "Other") {
-      result[Ethnicity].Other += 1;
+    if (gender === "Female") {
+      result[ethnicity].Female += 1;
+    } else if (gender === "Male") {
+      result[ethnicity].Male += 1;
+    } else if (gender === "Other") {
+      result[ethnicity].Other += 1;
     }
   }
 

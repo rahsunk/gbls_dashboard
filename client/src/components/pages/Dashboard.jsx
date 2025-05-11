@@ -12,9 +12,17 @@ import Veterans from "../modules/Veterans.jsx";
 import Disabled from "../modules/Disabled.jsx";
 import DV from "../modules/DV.jsx";
 import EthnicityGender from "../modules/EthnicityGender.jsx";
+import SexOrientation from "../modules/SexOrientation.jsx";
+import Filter from "../modules/Filter.jsx";
 
 // Dummy data:
-import { people, getTopFieldValues } from "../modules/data.js";
+import { getData, getTopFieldValues } from "../modules/data.js";
+
+const sheetID = "1mG9ChXcHKXjQCDXWVJccEG130tbclYFHBptU7ewrdFk";
+const sheetName = encodeURIComponent("Sheet1");
+const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
+
+const people = await getData(sheetURL);
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
@@ -22,30 +30,41 @@ const Dashboard = () => {
   const [veterans, setVeterans] = useState([]);
   const [disabled, setDisabled] = useState([]);
   const [dv, setDV] = useState([]);
+  const [sexOrientation, setSexOrientation] = useState([]);
   const [cities, setCities] = useState([]);
-  const [ethnicities, setEthnicities] = useState([]);
-  const [genders, setGenders] = useState([]);
 
   useEffect(() => {
     setData(people);
-    setLanguages(getTopFieldValues(people, "Language"));
-    setVeterans(getTopFieldValues(people, "Veteran"));
-    setDisabled(getTopFieldValues(people, "Disabled"));
+    setLanguages(getTopFieldValues(people, "language"));
+    setVeterans(getTopFieldValues(people, "veteran"));
+    setDisabled(getTopFieldValues(people, "disabled"));
     setDV(getTopFieldValues(people, "DV"));
-    setCities(getTopFieldValues(people, "City"));
-    setEthnicities(getTopFieldValues(people, "Ethnicity"));
-    setGenders(getTopFieldValues(people, "Gender"));
+    setSexOrientation(getTopFieldValues(people, "sexOrientation"));
+    setCities(getTopFieldValues(people, "city"));
   }, []);
 
   return (
     <>
-      <h1>This Year's Clients</h1>
-      <Languages languages={languages} />
-      <Cities topCities={cities} />
-      <Veterans veterans={veterans} />
-      <Disabled disabled={disabled} />
-      <DV dv={dv} />
-      <EthnicityGender />
+      <div id="section1">
+        <h1>This Year's Clients</h1>
+        <Filter people={people} />
+      </div>
+      <hr />
+      <div id="section2">
+        <Languages languages={languages} />
+        <Cities topCities={cities} />
+      </div>
+      <hr />
+      <div id="section3">
+        <Veterans veterans={veterans} />
+        <Disabled disabled={disabled} />
+        <DV dv={dv} />
+        <SexOrientation sexOrientation={sexOrientation} />
+      </div>
+      <hr />
+      <div id="section4">
+        <EthnicityGender people={people} />
+      </div>
     </>
   );
 };
