@@ -33,8 +33,10 @@ const Filter = (props) => {
     }
     return people.filter(
       (person) =>
-        person.firstName.toLowerCase().startsWith(firstNamePrefix) &&
-        person.lastName.toLowerCase().startsWith(lastNamePrefix)
+        person.firstName
+          .toLowerCase()
+          .startsWith(firstNamePrefix.toLowerCase()) &&
+        person.lastName.toLowerCase().startsWith(lastNamePrefix.toLowerCase())
     );
   }
 
