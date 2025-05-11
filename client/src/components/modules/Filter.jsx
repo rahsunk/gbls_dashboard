@@ -54,18 +54,20 @@ const Filter = (props) => {
           <input type="submit" />
         </form>
 
-        <h3>Matched People:</h3>
-        <ul id="matchedPeople">
-          {filteredPeople.length > 0 || initialSearch ? (
-            filteredPeople.map((person, index) => (
-              <li key={index}>
-                {person.firstName} {person.lastName}
-              </li>
-            ))
-          ) : (
-            <p>Search matches no clients</p>
-          )}
-        </ul>
+        {filteredPeople.length > 0 || initialSearch ? (
+          <>
+            <h3>Matched People:</h3>
+            <ul id="matchedPeople">
+              {filteredPeople.map((person, index) => (
+                <li key={index}>
+                  {person.firstName} {person.lastName}
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <p>Search matches no clients</p>
+        )}
       </div>
     </>
   );
