@@ -46,6 +46,7 @@ const Dashboard = () => {
   return (
     <>
       <div id="section1">
+        <img src="../../../gblsLogo.png" width="400" />
         <h1>This Year's Clients</h1>
         <Filter people={people} />
       </div>
