@@ -24,7 +24,7 @@ const Cities = (props) => {
   return (
     <>
       <div>
-        <h2>Top 8 Cities by Number of Clients</h2>
+        <h2>Top 15 Cities by Number of Clients</h2>
         <table>
           <thead>
             <tr>
@@ -32,8 +32,8 @@ const Cities = (props) => {
               <th scope="col">Clients</th>
             </tr>
           </thead>
-          {/* Just getting the top 8 cities below */}
-          <tbody>{citiesList.slice(0, 8)}</tbody>
+          {/* Just getting the top 15 cities below */}
+          <tbody>{citiesList.slice(0, 15)}</tbody>
         </table>
       </div>
     </>

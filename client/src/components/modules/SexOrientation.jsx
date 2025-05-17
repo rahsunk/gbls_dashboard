@@ -7,9 +7,9 @@ import { PieChart, Pie, Cell } from "recharts";
 import "./section3.css";
 
 const colorConfig = {
-  Heterosexual: "#008000",
-  Homosexual: "#4B0082",
-  Unspecified: "#808080",
+  Heterosexual: "#008000", // Green
+  Homosexual: "#4B0082", // Purple
+  Unspecified: "#808080", // Gray
 };
 
 const SexOrientation = (props) => {

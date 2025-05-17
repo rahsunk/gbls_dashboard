@@ -22,7 +22,7 @@ const EthnicityGender = (props) => {
   return (
     <>
       <h2>Clients by Race and Gender</h2>
-      {/* {genderStatList} */}
+      {/* Multi-bar graph of ethnicities, where each bar is a gender */}
       <BarChart width={1200} height={250} data={genderStats}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="ethnicity" />

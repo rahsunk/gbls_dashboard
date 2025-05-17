@@ -7,8 +7,8 @@ import { PieChart, Pie, Cell } from "recharts";
 import "./section3.css";
 
 const colorConfig = {
-  Yes: "#008000",
-  No: "#4B0082",
+  Yes: "#008000", // Green
+  No: "#4B0082", // Purple
 };
 
 const Veterans = (props) => {
@@ -16,7 +16,6 @@ const Veterans = (props) => {
 
   useEffect(() => {
     setVeterans(props.veterans);
-    // console.log(veterans);
   }, [props.veterans]);
 
   return (

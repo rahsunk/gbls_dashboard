@@ -15,7 +15,7 @@ import EthnicityGender from "../modules/EthnicityGender.jsx";
 import SexOrientation from "../modules/SexOrientation.jsx";
 import Filter from "../modules/Filter.jsx";
 
-// Dummy data:
+// Dummy data from https://docs.google.com/spreadsheets/d/1mG9ChXcHKXjQCDXWVJccEG130tbclYFHBptU7ewrdFk/edit?gid=0#gid=0
 import { getData, getTopFieldValues } from "../modules/data.js";
 
 const sheetID = "1mG9ChXcHKXjQCDXWVJccEG130tbclYFHBptU7ewrdFk";

@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-// import { UserContext } from "../context/UserContext";
 import { get, post } from "../../utilities";
 import "./section1.css";
 
@@ -14,6 +13,11 @@ const Filter = (props) => {
     setPeople(props.people);
   }, [props.people]);
 
+  /**
+   * Updates the filtered clients upon clicking submit.
+   *
+   * @param event triggered action (click)
+   */
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -27,6 +31,14 @@ const Filter = (props) => {
     setFilteredPeople(result);
   }
 
+  /**
+   * Retrieve a list of clients whose first and last name starts with the given
+   * prefixes (ignoring upper/lowercase), or no clients if both prefixes are empty.
+   *
+   * @param firstNamePrefix prefix of first name
+   * @param lastNamePrefix prefix of last name
+   * @returns a list of clients who match the specificiation above
+   */
   function getPeople(firstNamePrefix, lastNamePrefix) {
     if (firstNamePrefix === "" && lastNamePrefix === "") {
       return [];
@@ -60,6 +72,7 @@ const Filter = (props) => {
           <>
             <h3>Matched People:</h3>
             <ul id="matchedPeople">
+              {/* The returned clients from the first and last name prefix filters */}
               {filteredPeople.map((person, index) => (
                 <li key={index}>
                   {person.firstName} {person.lastName}

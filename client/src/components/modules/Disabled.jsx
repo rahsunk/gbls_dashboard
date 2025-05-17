@@ -7,9 +7,9 @@ import { PieChart, Pie, Cell } from "recharts";
 import "./section3.css";
 
 const colorConfig = {
-  Yes: "#008000",
-  No: "#4B0082",
-  Unspecified: "#808080",
+  Yes: "#008000", // Green
+  No: "#4B0082", // Purple
+  Unspecified: "#808080", // Gray
 };
 
 const Disabled = (props) => {

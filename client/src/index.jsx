@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./components/App";
-import Skeleton from "./components/pages/Skeleton";
 import NotFound from "./components/pages/NotFound";
-import MapPage from "./components/pages/MapPage";
 import Dashboard from "./components/pages/Dashboard";
 
 import {
@@ -22,8 +20,6 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route errorElement={<NotFound />} element={<App />}>
       <Route path="/" element={<Dashboard />} />
-      <Route path="/skeleton" element={<Skeleton />} />
-      <Route path="/map" element={<MapPage />} />
     </Route>
   )
 );
