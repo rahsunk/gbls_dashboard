@@ -5,7 +5,7 @@
 - **David Oluigbo**  
 - **Davut Muhammetgulyyev**
 
-This is a demo database created using ReactJS. It serves as an interactive mockup of the internal dashboard to be created for GBLS to view client data.
+This is a demo database created using ReactJS. It serves as an interactive mockup of the internal dashboard to be created for GBLS to view client data. You can view the website [here](https://gbls-dashboard.onrender.com/) (may take some time to build)
 
 This demo database pulls client information from a [spreadsheet](https://docs.google.com/spreadsheets/d/1mG9ChXcHKXjQCDXWVJccEG130tbclYFHBptU7ewrdFk/edit?usp=sharing) and displays graphs of quantities of various data. This data currently includes:
 
